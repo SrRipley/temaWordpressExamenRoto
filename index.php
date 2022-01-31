@@ -1,37 +1,28 @@
 <?php get_header(); ?>
+<h1>
+    <?php
+    echo get_bloginfo("name");
+    ?>
+</h1>
+<?php
 
-<?php while (have_posts()) {
+while (have_posts()) {
     the_post(); ?>
 
-    <div class="blog-post">
-        <h2 class="blog-post-title"> <?php the_title(); ?> </h2>
-        <p class="blog-post-meta">
-            <?php the_date(); ?> por <?php the_author(); ?>
-        </p>
+    <h2>
+        <?php the_title(); ?>
+    </h2>
+    <h3>
+        <?php the_author(); ?>
+    </h3>
 
+    <p>
         <?= the_excerpt(); ?>
+    </p>
 
-        <a href="<?= the_permalink(); ?>">Ver mas...</a>
-    </div>
-<?php } ?>
-
-
-<div class="nav-previous alignleft"><?php previous_posts_link('Entradas más antiguas'); ?></div>
-<div class="nav-next alignright"><?php next_posts_link('Entradas más recientes'); ?></div>
-
-</div>
-</div>
-</main>
-</body>
-<footer class="blog-footer">
-    <div class="contariner">
-        <div class="row">
-            <div class="col-md-6"><?php echo get_bloginfo("description") ?> </div>
-            <div class="col-md-6">
-               Menú
-            </div>
-        </div>
-    </div>
-</footer>
-
-</html>
+    <a href="<?= the_permalink(); ?>">ver más</a>
+    
+<?php
+}
+?>
+<?php get_footer(); ?>

@@ -12,3 +12,13 @@ Tags: bootstrap
 ul {
     list-style: none;
 }
+
+
+footer { 
+    padding-top: 20px;
+    margin: -44px; ;
+    background-color: grey;
+    color: whitesmoke;
+    display: flex;
+    text-decoration: none;
+}
